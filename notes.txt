@@ -1,0 +1,26 @@
+./mvnw clean package -dSkipTests
+
+
+docker build -t awfis-java .
+
+docker tag a9683eddb48e  bhvnjn/awfis-java:v1
+
+docker push  bhvnjn/awfis-java:v1
+
+-----------------------------------------------------------------
+AWS Deployment Commands:
+-----------------------------------------------------------------
+
+sudo apt-get install docker.io
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+docker ps
+
+sudo apt-get install docker compose
+
+docker compose up -d
+
+
